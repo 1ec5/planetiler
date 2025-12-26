@@ -111,7 +111,9 @@ public class Format {
 
   /** Returns an openstreetmap.org map link for a lat/lon */
   public static String osmDebugUrl(int zoom, Coordinate coord) {
-    return "https://www.openstreetmap.org/#map=%d/%.5f/%.5f".formatted(
+    return String.format(
+      Locale.ROOT,
+      "https://www.openstreetmap.org/#map=%d/%.5f/%.5f",
       zoom,
       coord.y,
       coord.x
